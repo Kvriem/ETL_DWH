@@ -31,6 +31,9 @@ def create_dwh_schema():
         user_id INT,
         date_id INT,
         sales_amount FLOAT
+        constraint fk_book_id foreign key(book_id) references book_dim(book_id),
+        constraint fk_user_id foreign key(user_id) references user_dim(user_id),
+        constraint fk_date_id foreign key(date_id) references date_dim(date_id)
     )
     """)
     
